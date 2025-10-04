@@ -30,7 +30,6 @@ alloy = { version = ">=1.0.33", default-features = false, features = ["reqwest",
 async-stream = { workspace = true }
 async-trait = "0.1"
 aws-sdk-s3 = { version = "1.107.0", default-features = false, features = ["rt-tokio", "default-https-client"] }
-aws-smithy-http-client = { version = "1.1", default-features = false, features = ["rustls-aws-lc"] }
 bytemuck = { workspace = true }
 clap = { workspace = true }
 dashmap = "6"
@@ -39,19 +38,16 @@ futures-util = { workspace = true }
 hex = { workspace = true }
 httpmock = "0.7"
 rand = { workspace = true }
-reqwest = { version = "0.12", default-features = false, features = ["json", "multipart", "rustls-tls-webpki-roots-no-provider"] }
+reqwest = { version = "0.12", default-features = false, features = ["http2", "system-proxy", "charset", "json", "multipart", "rustls-tls-webpki-roots-no-provider"] }
 risc0-aggregation = { workspace = true }
 risc0-circuit-recursion = { workspace = true, optional = true }
 risc0-ethereum-contracts = { workspace = true, features = ["unstable"] }
 risc0-zkvm = { workspace = true, features = ["std", "client"] }
 rmp-serde = { workspace = true }
 serde_json = { workspace = true }
-rustls = { version = "0.23", default-features = false, features = ["aws-lc-rs", "std", "tls12"] }
-hyper-rustls = { version = "0.27", default-features = false, features = ["aws-lc-rs", "http1", "http2", "webpki-tokio"] }
-tokio-rustls = { version = "0.26", default-features = false, features = ["aws-lc-rs"] }
 tempfile = { workspace = true }
 tokio = { workspace = true }
-tokio-tungstenite = { version = "0.24", default-features = false, features = ["connect", "rustls-tls-webpki-roots"] }
+tokio-tungstenite = { version = "0.24", default-features = false, features = ["connect", "handshake", "rustls-tls-webpki-roots"] }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true, features = ["env-filter"] }
 siwe = { version = "0.6", features = ["serde"] }
